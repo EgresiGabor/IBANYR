@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBANYR", "IBANYR\IBANYR.csproj", "{A9D19AE5-AD01-49F7-BC4E-85B15307B6AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBANYRUnitTest", "IBANYRUnitTest\IBANYRUnitTest.csproj", "{F0567D31-BB04-41B9-B478-C85C604D3EE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9D19AE5-AD01-49F7-BC4E-85B15307B6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D19AE5-AD01-49F7-BC4E-85B15307B6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D19AE5-AD01-49F7-BC4E-85B15307B6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D19AE5-AD01-49F7-BC4E-85B15307B6AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0567D31-BB04-41B9-B478-C85C604D3EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0567D31-BB04-41B9-B478-C85C604D3EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0567D31-BB04-41B9-B478-C85C604D3EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0567D31-BB04-41B9-B478-C85C604D3EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D76B42A-8E6B-42CB-A322-114D2FF700BA}
+	EndGlobalSection
+EndGlobal

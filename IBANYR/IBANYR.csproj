@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9D19AE5-AD01-49F7-BC4E-85B15307B6AA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IBANYR</RootNamespace>
+    <AssemblyName>IBANYR</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\shield_tiny.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AppSetting.cs" />
+    <Compile Include="Classes\Contact.cs" />
+    <Compile Include="Classes\Department.cs" />
+    <Compile Include="Classes\EmailSender.cs" />
+    <Compile Include="Classes\Partner.cs" />
+    <Compile Include="Classes\PwException.cs" />
+    <Compile Include="Classes\ComputerDevice.cs" />
+    <Compile Include="Classes\AppConfiguration.cs" />
+    <Compile Include="Controls\OwnDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\DBException.cs" />
+    <Compile Include="Classes\DBManager.cs" />
+    <Compile Include="Controls\DepartmentsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DepartmentsPanel.Designer.cs">
+      <DependentUpon>DepartmentsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DgvColumnPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\DataStorageDevice.cs" />
+    <Compile Include="Forms\FrmConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmConfiguration.Designer.cs">
+      <DependentUpon>FrmConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Password.cs" />
+    <Compile Include="Forms\FrmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmChangePassword.Designer.cs">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmUserManager.Designer.cs">
+      <DependentUpon>FrmUserManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmGroupManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmGroupManager.Designer.cs">
+      <DependentUpon>FrmGroupManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDepartmentManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDepartmentManager.Designer.cs">
+      <DependentUpon>FrmDepartmentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDeleteDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDeleteDepartment.Designer.cs">
+      <DependentUpon>FrmDeleteDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Permission.cs" />
+    <Compile Include="Classes\PermissionGroup.cs" />
+    <Compile Include="Controls\LogsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LogsPanel.Designer.cs">
+      <DependentUpon>LogsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPartnerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPartnerManager.Designer.cs">
+      <DependentUpon>FrmPartnerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmContactManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmContactManager.Designer.cs">
+      <DependentUpon>FrmContactManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmItSystemPermissionManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmItSystemPermissionManager.Designer.cs">
+      <DependentUpon>FrmItSystemPermissionManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmItSystemPermissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmItSystemPermissions.Designer.cs">
+      <DependentUpon>FrmItSystemPermissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUserItSystemPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmUserItSystemPermission.Designer.cs">
+      <DependentUpon>FrmUserItSystemPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHardwareManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHardwareManager.Designer.cs">
+      <DependentUpon>FrmHardwareManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmIPv4Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmIPv4Manager.Designer.cs">
+      <DependentUpon>FrmIPv4Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmNicManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmNicManager.Designer.cs">
+      <DependentUpon>FrmNicManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Hardware.cs" />
+    <Compile Include="Controls\HardwaresPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HardwaresPanel.Designer.cs">
+      <DependentUpon>HardwaresPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMaintenaceOfHardware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMaintenaceOfHardware.Designer.cs">
+      <DependentUpon>FrmMaintenaceOfHardware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMaintenanceManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMaintenanceManager.Designer.cs">
+      <DependentUpon>FrmMaintenanceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSoftwareManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSoftwareManager.Designer.cs">
+      <DependentUpon>FrmSoftwareManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUsersHardwares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmUsersHardwares.Designer.cs">
+      <DependentUpon>FrmUsersHardwares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSetConnectionString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSetConnectionString.Designer.cs">
+      <DependentUpon>FrmSetConnectionString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAboutBox.Designer.cs">
+      <DependentUpon>FrmAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IBANYRDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IBANYRDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IToCsv.cs" />
+    <Compile Include="Controls\ItSystemsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ItSystemsPanel.Designer.cs">
+      <DependentUpon>ItSystemsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ItSystem.cs" />
+    <Compile Include="Forms\FrmItSystemManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmItSystemManager.Designer.cs">
+      <DependentUpon>FrmItSystemManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NumericUpDownDynamicUnit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericUpDownDynamicUnit.Designer.cs">
+      <DependentUpon>NumericUpDownDynamicUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ItSystemPermission.cs" />
+    <Compile Include="Classes\IPv4Address.cs" />
+    <Compile Include="Classes\ItAsset.cs" />
+    <Compile Include="Classes\NetActiveDevice.cs" />
+    <Compile Include="Classes\NIC.cs" />
+    <Compile Include="Classes\MaintenanceLog.cs" />
+    <Compile Include="Controls\MaintenancePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MaintenancePanel.Designer.cs">
+      <DependentUpon>MaintenancePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="Controls\UsersPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UsersPanel.Designer.cs">
+      <DependentUpon>UsersPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\SystemLog.cs" />
+    <Compile Include="Classes\Software.cs" />
+    <Compile Include="Controls\SoftwaresPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SoftwaresPanel.Designer.cs">
+      <DependentUpon>SoftwaresPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StartPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StartPanel.Designer.cs">
+      <DependentUpon>StartPanel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\DepartmentsPanel.resx">
+      <DependentUpon>DepartmentsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmConfiguration.resx">
+      <DependentUpon>FrmConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmGroupManager.resx">
+      <DependentUpon>FrmGroupManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmItSystemManager.resx">
+      <DependentUpon>FrmItSystemManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmChangePassword.resx">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUserManager.resx">
+      <DependentUpon>FrmUserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDepartmentManager.resx">
+      <DependentUpon>FrmDepartmentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDeleteDepartment.resx">
+      <DependentUpon>FrmDeleteDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LogsPanel.resx">
+      <DependentUpon>LogsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ItSystemsPanel.resx">
+      <DependentUpon>ItSystemsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPartnerManager.resx">
+      <DependentUpon>FrmPartnerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmContactManager.resx">
+      <DependentUpon>FrmContactManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmItSystemPermissionManager.resx">
+      <DependentUpon>FrmItSystemPermissionManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmItSystemPermissions.resx">
+      <DependentUpon>FrmItSystemPermissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUserItSystemPermission.resx">
+      <DependentUpon>FrmUserItSystemPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHardwareManager.resx">
+      <DependentUpon>FrmHardwareManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmIPv4Manager.resx">
+      <DependentUpon>FrmIPv4Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmNicManager.resx">
+      <DependentUpon>FrmNicManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HardwaresPanel.resx">
+      <DependentUpon>HardwaresPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMaintenaceOfHardware.resx">
+      <DependentUpon>FrmMaintenaceOfHardware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMaintenanceManager.resx">
+      <DependentUpon>FrmMaintenanceManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSoftwareManager.resx">
+      <DependentUpon>FrmSoftwareManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MaintenancePanel.resx">
+      <DependentUpon>MaintenancePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUsersHardwares.resx">
+      <DependentUpon>FrmUsersHardwares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSetConnectionString.resx">
+      <DependentUpon>FrmSetConnectionString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAboutBox.resx">
+      <DependentUpon>FrmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UsersPanel.resx">
+      <DependentUpon>UsersPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SoftwaresPanel.resx">
+      <DependentUpon>SoftwaresPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StartPanel.resx">
+      <DependentUpon>StartPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="IBANYRDataSet.xsc">
+      <DependentUpon>IBANYRDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IBANYRDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IBANYRDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IBANYRDataSet.xss">
+      <DependentUpon>IBANYRDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_tiny_dark.png" />
+    <None Include="Resources\maintenance_tiny.png" />
+    <None Include="Resources\maintenance_tiny_dark.png" />
+    <None Include="Resources\maintenance.png" />
+    <None Include="Resources\copyBlue.png" />
+    <None Include="Resources\software_tiny_dark.png" />
+    <None Include="Resources\software.png" />
+    <None Include="Resources\computer_tiny_dark.png" />
+    <None Include="Resources\deleteBlue.png" />
+    <None Include="Resources\system_tiny_dark.png" />
+    <None Include="Resources\logs_tiny_dark.png" />
+    <None Include="Resources\logs.png" />
+    <None Include="Resources\company_tiny_dark.png" />
+    <None Include="Resources\users_tiny_dark.png" />
+    <None Include="Resources\config_tiny_dark.png" />
+    <None Include="Resources\close_tiny_dark.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\addBlue.png" />
+    <None Include="Resources\editBlue.png" />
+    <None Include="Resources\seeBlue.png" />
+    <None Include="Resources\searchBlue.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\editKey.png" />
+    <None Include="Resources\see.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\system.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\config.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\computer.png" />
+    <None Include="Resources\company.png" />
+    <None Include="Resources\workers.png" />
+    <None Include="Resources\users.png" />
+    <None Include="Resources\close_medium.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\shield_medium.png" />
+    <None Include="Resources\mainIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\shield_tiny.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

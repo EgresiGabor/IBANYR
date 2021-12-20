@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+    </configSections>
+    <connectionStrings>
+        <add name="IBANYR.Properties.Settings.IBANYRConnectionString"
+            connectionString="bcLPqMmzQ6fmURUG/j7VGRO6TRWyMZc8TaVQ3RKwGooVR45D9zHh7aWzvDyD/zy+1KeIAtDA+oguynArft9EsB3iDW+mrC10B8Z2Wn8gT9b5bNzHF42mGw=="
+            providerName="System.Data.SqlClient" />
+    </connectionStrings>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+    </startup>
+</configuration>
